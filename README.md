@@ -2,7 +2,7 @@
 
 This project is essentially a basic command-line interface (CLI) utility that allows users to execute shell commands from within a Node.js application. It also comes with some custom commands such as exit to terminate the application and history to view previously executed commands. Moreover, it supports piping between commands, similar to UNIX shell behavior. Let's break it down:
 
-Imports: The code imports necessary modules:
+#Imports: The code imports necessary modules:
 
 readline: To provide an interface for reading lines from a readable stream (like process.stdin) and writing lines to a writable stream.
 spawn: From the child_process module, which is used to execute shell commands.
@@ -16,9 +16,7 @@ const rl = readline.createInterface(...): It creates a readline interface to rea
 Command Line Prompt:
 
 When you run this program, it will display a $ prompt, waiting for user input.
-Event Handling:
-
-The code listens to the line event which is triggered when a user enters a command and hits the enter key.
+Event Handling:The code listens to the line event which is triggered when a user enters a command and hits the enter key.
 If the command is exit, the CLI application terminates.
 If the command is history, it displays all the previously entered commands.
 If there's a | in the command (used in UNIX-like systems for piping output from one command as input to another), the program will split the command into two parts and execute them, piping the output of the first command to the second command.
